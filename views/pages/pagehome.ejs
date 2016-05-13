@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html ng-app='page-home'>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+ </head>
+<body>
+<h1> RiViAm</h1>
+<div ng-controller="pmm-ctlr1">
+<strong>{{Page.name}}</Strong>
+
+<a href=#>like</a>{{Page.like}} <a href=# >dislike</a>{{Page.dislike}}
+<!-- loop1 start -->
+<br/>
+{{cmntdata.user}}:{{cmntdata.comment}}
+<!-- loop 2 for reply start -->
+</br>
+<h1> </h1> {{cmntdata.user}}:{{cmntdata.comment}}
+<!-- loop 2 for reply end -->
+<!-- loop1 end -->
+
+</div>
+
+
+</div>
+</body>
+</html>

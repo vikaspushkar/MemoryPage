@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="./testjs.js"></script>
+<script type="text/javascript"> 
+	function option(opt)
+	{
+		//var opt=5;
+		//alert(nm);
+		if(opt == 5)
+		{
+			//alert("you selected other");
+			document.getElementById("othertext").style.visibility="visible";
+		}
+		else
+		{
+			document.getElementById("othertext").style.visibility="hidden";
+		}
+	}
+
+</script>
+</head>
+<body  ng-app='all-page-home'>
+<h1> RiViAm</h1>
+<div ng-controller="createpagecontroller">
+<form ng-submit="createpage()" action="/create" method="post"> 
+<strong>Page Name:</strong>
+<input type="text" required value="page name" name="pname"></br>
+
+<strong>Page Ocassion :</strong> 
+<select name="ocassion"  onchange=option(this.value)>
+<option value=1>Birthday</option>
+<option value=2>farewell</option>
+<option value=3>Welcome</option>
+<option value=4>Marriage</option>
+<option value=5>Other</option>
+</select>
+<input type="text" name="othertext" id="othertext" style="visibility:hidden"> 
+<br><br>
+<input type="submit" name="create" value="Create">
+</form>
+</div>
+<!--
+<div ng-controller="all-page-ctlr1">
+-->
+<!-----fetch pages starts-->
+<!--<form ng-submit="fetchpage()"   action="/test/fetch" method="post"> 
+<strong>Page Name:</strong>
+<input type="text" required value="page name" name="pfname"></br>
+<strong>Page ID:</strong>
+<input type="text" required value="page ID" name="pfid"></br>
+<strong>Page Ocassion :</strong> 
+<select name="pfocassion"  onchange=option(this.value)>
+<option value=1>Birthday</option>
+<option value=2>farewell</option>
+<option value=3>Welcome</option>
+<option value=4>Marriage</option>
+<option value=5>Other</option>
+</select>
+<input type="text" name="othertext" id="othertext" style="visibility:hidden"> 
+<br><br>
+<input type="submit" name="pfcreate" value="fetch">
+<input type="submit" name="pfcreate" value="fetchAll">
+</form>
+
+-->
+<!-- fetch pages ends-->
+<!-- loop1 start -->
+<!--
+<strong>{{Page.name}}</Strong>
+
+<a href=#>like</a>{{Page.like}} <a href=# >dislike</a>{{Page.dislike}}
+<!-- loop1 end -->
+-->
+<!--
+</div>
+-->
+
+</body>
+</html>

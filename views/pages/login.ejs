@@ -1,0 +1,43 @@
+ <html>
+<head>
+<meta charset="utf-8">
+<title>Login to Page Up your memory!!!</title>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dancing Script">
+ <style> 
+ mylogr {
+	text-align:right;
+	 font-family: 'Dancing Script', serif;
+        font-size: 18px;
+	color: purple;
+	}
+mylogl {
+	text-align:left;
+	 font-family: 'Dancing Script', serif;
+        font-size: 18px;
+	color: purple;
+	}
+mylogc {
+	text-align:left;
+	 font-family: 'Dancing Script', serif;
+        font-size: 18px;
+	color: yellow;
+	}
+</style>
+</head>
+<body style="background:#132F57">
+<div id="login">
+<form action="/login/cred" method="get">
+
+<mylogl><h1>Username</h1></mylogl>
+<mylogl><input type="text" required value="Username" onBlur="if(this.value=='')this.value=''" onFocus="if(this.value=='')this.value='' "></mylogl>
+<mylogl><h1>Password</h1></mylogl>
+<input type="password" required value="Password" >
+<input type="submit" value="Check-in"><br><br><br>
+<a style = "color:yellow" href="#">Forgot Password?</a>
+<a style = "color:yellow" href="/signup">New User?</a>
+</mylogl>
+</form>
+</div> <!-- end login -->
+</mylogl>
+</body>
+</html>

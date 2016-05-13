@@ -1,0 +1,119 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster">
+
+<!-- Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+<script src="comment.js"></script>
+<!-- lil bit of style -->
+
+<style>
+ myspec {
+        font-family: 'Lobster', serif;
+        font-size: 48px;
+	color: white;
+      }
+ myspecr {
+	text-align:right;
+        font-family: 'Lobster', serif;
+        font-size: 20px;
+	color: #003131;
+      }
+ myspecl {
+	text-align:left;
+	float:left;
+        font-family: 'Lobster', serif;
+        font-size: 20px;
+	color: #003131;
+      }
+ myspecc {
+	text-align:center;
+        font-family: 'Lobster', serif;
+        font-size: 20px;
+	color: #003131;
+      }
+</style>
+    <% include ../partials/head %>
+</head>
+
+
+
+
+
+<body  ng-app= "comment-page" ng-controller= "commentcont"><!-- style="background:#132F57"-->
+
+
+<nav>
+<myspec><h3 align = "right"> <a href=/login >Login</a>/<a href=/signup>SignUp</a></h3></myspec>
+</nav>
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+            <h2><myspec>Precious!!! Moments in life are.</myspec> </h2>
+<myspecr> 
+
+
+
+
+<!--<div ng-repeat="post in posts | orderBy:'-upvotes'">
+        <span class="glyphicon glyphicon-thumbs-up"
+          ng-click="incrementUpvotes(post)"></span>
+        {{post.upvotes}}
+        <span style="font-size:20px; margin-left:10px;">
+          <a ng-show="post.link" href="{{post.link}}">
+            {{post.title}}
+          </a>
+          <span ng-hide="post.link">
+            {{post.title}}
+          </span>
+        </span>
+      </div>
+
+-->
+<div>
+
+<!--{{userid}} {{userauth}}{{commid}}{{test1}}-->
+</div>
+<div>
+ <form ng-submit="addComment()" >
+<input type="text" required name="comment" ng-model="comment" value="comment" onBlur="if(this.value=='')this.value='Comment...'" onFocus="if(this.value=='Comment...')this.value='' ">
+<input type="submit" value="post">
+</form>
+</div>
+<div>
+<form ng-submit="getComment()" >
+<input type="submit" value="Get">
+</form>
+</div>
+<div ng-repeat="comment in commentlist ">
+<span>
+          {{comment.Comment}}
+        </span>
+ <span ng-click="incrementUpvotes(comment)">
+        <a>like</a></span>{{comment.Like}}
+<span  ng-click="incrementDownvotes(comment)">
+	<a>dislike</a></span>{{comment.Dislike}}
+        
+	<span ng-click=addReply(comment)> <a> reply </a></span>
+	<span ng-click=deleteComment(comment)> <a> Delete </a></span>
+</div>
+
+<myspecr>
+
+</br>
+</br>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+
+</html>
+
